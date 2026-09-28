@@ -3,11 +3,9 @@
 
 ## Introduction
 
-This repository contains a collection of utilities, helper applications, scripts, and development tools used by the Calculate Funding team.
+This repository contains a collection of utilities, helper applications, scripts, and development tools used by the Funding Calculation Service team.
 
 The tools within this repository support various engineering, release management, diagnostics, reporting, CRM integration, Service Bus operations, and development productivity activities.
-
-This repository was migrated from TFVC on 05-Nov-2019 and is maintained as a central location for internally developed tools.
 
 ---
 
