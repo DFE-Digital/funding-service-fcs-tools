@@ -30,7 +30,7 @@
   "devDependencies": {
     "btoa": "~1.1.2",
     "glob": "~5.0.5",
-    "grunt": "~0.4.5",
+    "grunt": "~1.6.3",
     "grunt-autoprefixer": "~3.0.0",
     "grunt-contrib-clean": "~0.6.0",
     "grunt-contrib-compress": "~0.13.0",
@@ -54,7 +54,7 @@
     "grunt-saucelabs": "~8.6.1",
     "grunt-sed": "twbs/grunt-sed#v0.2.0",
     "load-grunt-tasks": "~3.2.0",
-    "markdown-it": "^4.2.1",
+    "markdown-it": "^15.0.2",
     "npm-shrinkwrap": "^200.4.0",
     "time-grunt": "^1.2.0"
   },
