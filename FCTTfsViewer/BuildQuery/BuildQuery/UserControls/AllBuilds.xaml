@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="BuildQuery.AllBuilds"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:buildQuery="clr-namespace:BuildQuery"
+             xmlns:tfsData="clr-namespace:BuildQuery.TfsData.Models;assembly=BuildQuery.TfsData"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <buildQuery:BuildStatusToColourConverter x:Key="buildStatusToColourConverter"></buildQuery:BuildStatusToColourConverter>
+
+    </UserControl.Resources>
+    <Grid>
+        <ListBox Grid.Row="1" Name="Horizontal" ItemsSource="{Binding BuildList}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="DarkGray" BorderThickness="3" Height="160" Width="250" CornerRadius="5" Background="{Binding Status,Converter={ StaticResource buildStatusToColourConverter}}">
+
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock FontSize="14" TextWrapping="Wrap" Margin="1" HorizontalAlignment="Left" FontWeight="Bold" Text="{Binding DefinitionName}"></TextBlock>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="14" TextWrapping="Wrap" Margin="1" HorizontalAlignment="Left" FontWeight="Bold" Text="{Binding Status}"></TextBlock>
+                                <TextBlock FontSize="10" TextWrapping="Wrap" Margin="1" HorizontalAlignment="Left" FontWeight="Bold" Text="Tests:"></TextBlock>
+                                <TextBlock FontSize="10" TextWrapping="Wrap" Margin="1" HorizontalAlignment="Left" FontWeight="Bold" Text="{Binding TestStatus}"></TextBlock>
+                            </StackPanel>
+                            <TextBlock FontSize="16" TextWrapping="Wrap" Margin="1" HorizontalAlignment="Left" FontWeight="ExtraBold" Text="{Binding RequestedFor}"></TextBlock>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="10" TextWrapping="Wrap" Margin="1" HorizontalAlignment="Left" FontWeight="Bold" Text="Start:"></TextBlock>
+                                <TextBlock FontSize="10" TextWrapping="Wrap" Margin="1" HorizontalAlignment="Left" FontWeight="Bold" Text="{Binding StartTime,StringFormat=dd MMM yyyy HH:mm:ss}"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="10" TextWrapping="Wrap" Margin="1" HorizontalAlignment="Left" FontWeight="Bold" Text="Finish:"></TextBlock>
+                                <TextBlock FontSize="10" TextWrapping="Wrap" Margin="1" HorizontalAlignment="Left" FontWeight="Bold" Text="{Binding FinishTime,StringFormat=dd MMM yyyy HH:mm:ss}"></TextBlock>
+                            </StackPanel>
+                            <TextBlock FontSize="8" TextWrapping="Wrap" Margin="1" HorizontalAlignment="Left" FontWeight="Bold" Text="{Binding LabelName}"></TextBlock>
+                            <TextBlock FontSize="8" TextWrapping="Wrap" Margin="1" HorizontalAlignment="Left" FontWeight="Bold" Text="Last Good Build Label:"></TextBlock>
+                            <TextBlock FontSize="8" TextWrapping="Wrap" Margin="1" HorizontalAlignment="Left" FontWeight="Bold" Text="{Binding LastGoodLabelName}"></TextBlock>
+
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</UserControl>

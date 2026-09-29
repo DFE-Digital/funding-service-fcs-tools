@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeactivateDuplicateSubnominals", "DeactivateDuplicateSubnominals\DeactivateDuplicateSubnominals.csproj", "{EA2E65DB-F623-4800-874F-9D9369F6ADDD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		OAT|Any CPU = OAT|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA2E65DB-F623-4800-874F-9D9369F6ADDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA2E65DB-F623-4800-874F-9D9369F6ADDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA2E65DB-F623-4800-874F-9D9369F6ADDD}.OAT|Any CPU.ActiveCfg = OAT|Any CPU
+		{EA2E65DB-F623-4800-874F-9D9369F6ADDD}.OAT|Any CPU.Build.0 = OAT|Any CPU
+		{EA2E65DB-F623-4800-874F-9D9369F6ADDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA2E65DB-F623-4800-874F-9D9369F6ADDD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 1
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.sfa.bis.gov.uk/defaultcollection
+		SccProjectUniqueName0 = DeactivateDuplicateSubnominals\\DeactivateDuplicateSubnominals.csproj
+		SccProjectName0 = DeactivateDuplicateSubnominals
+		SccAuxPath0 = https://tfs.sfa.bis.gov.uk/defaultcollection
+		SccLocalPath0 = DeactivateDuplicateSubnominals
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+EndGlobal

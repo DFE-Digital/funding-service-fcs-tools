@@ -1,0 +1,270 @@
+﻿<!DOCTYPE html>
+<html ng-app="buildQueryapp">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FCT Dev Live</title>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-http/angular-http.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="lib/d3/d3.js"></script>
+    <script src="lib/c3/c3.js"></script>
+    <script src="lib/angular-chart/angular-chart.js"></script>
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="lib/c3/c3.css" />
+    <link rel="stylesheet" href="app.css" />
+
+</head>
+<body ng-cloak>
+<h1>FCT Development Live Dashboard</h1>
+<div ng-controller="buildQueryController">
+    <h4>{{Model.LastRefresh| date:'dd/MM/yyyy HH:mm:ss'}}</h4>
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+       </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="container">
+                    <div>
+                        <table class="table table-bordered table-hover table-condensed ">
+                            <thead>
+                            <tr>
+                                <td><small>Definition Name</small></td>
+                                <td><small>Status</small></td>
+                                <td><small>Test Status</small></td>
+                                <td><small>Requested For</small></td>
+                                <td><small>Start Time</small></td>
+                                <td><small>Finish Time</small></td>
+                                <td><small>Warnings</small></td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="build in Model.BuildList" ng-class="{success : build.Status ==='Succeeded', danger : build.Status ==='Failed', info : build.Status ==='InProgress' || build.Status === 'Unknown'  || build.Status === 'PartiallySucceeded',warning : build.Status ==='Stopped'}">
+                                <td><small>{{build.DefinitionName}}</small></td>
+                                <td><small>{{build.Status}}</small></td>
+                                <td><small>{{build.TestStatus}}</small></td>
+                                <td><small>{{build.RequestedFor}}</small></td>
+                                <td><small>{{build.StartTime | date:'dd/MM/yyyy HH:mm:ss'}}</small></td>
+                                <td><small>{{build.FinishTime | date:'dd/MM/yyyy HH:mm:ss'}}</small></td>
+                                <td><small>{{build.Warnings}}</small></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="carousel-caption">
+                    <h3>Latest Build Info</h3>
+                </div>
+            </div>
+            <div class="item">
+                <div class="container">
+                    <div class="row">
+                        <div ng-repeat="keyBuild in Model.KeyBuildList">
+                            <div class="col-md-6">
+                                <div ng-class="{'panel panel-success' : keyBuild.Status ==='Succeeded', 'panel panel-danger' : keyBuild.Status ==='Failed','panel panel-info' : keyBuild.Status === 'InProgress' || keyBuild.Status === 'Unknown','panel panel-warning' : keyBuild.Status ==='Stopped' || keyBuild.Status === 'PartiallySucceeded' || keyBuild.Status ==='None'}">
+                                    <div class="panel-heading">
+                                        Build: {{keyBuild.DefinitionName}}
+                                    </div>
+                                    <div class="panel-body fixed-panel">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <ul>
+                                                    <li>
+                                                        <small>Status: {{keyBuild.Status}}</small>
+                                                    </li>
+                                                    <li>
+                                                        <small>Test Status: {{keyBuild.TestStatus}}</small>
+                                                    </li>
+                                                    <li>
+                                                        <small>Requested by: {{keyBuild.RequestedFor}}</small>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <ul>
+
+                                                    <li>
+                                                        <small>Start Time: {{keyBuild.StartTime | date:'dd/MM/yyyy HH:mm:ss'}}</small>
+                                                    </li>
+                                                    <li>
+                                                        <small>Finish Time: {{keyBuild.FinishTime | date:'dd/MM/yyyy HH:mm:ss'}}</small>
+                                                    </li>
+                                                    <li>
+                                                        <small>Warnings: {{keyBuild.Warnings}}</small>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                                <div ng-repeat="testRun in keyBuild.TestRunList">
+
+                                                    <div class="col-md-3">
+                                                        <div>
+                                                            <div>
+                                                                <angular-chart options="testRun.DonutChartOption"></angular-chart>
+                                                            </div>
+                                                            <div>
+                                                                <small>
+                                                                    {{testRun.Name}}
+                                                                </small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-caption">
+                    <h3>Key Build Info</h3>
+                </div>
+            </div>
+            <div class="item">
+                <div class="container">
+                    <div class="row">
+                        <div ng-repeat="keyBuild in Model.RunningKeyBuildList">
+                            <div class="col-md-6">
+                                <div ng-class="{'panel panel-success' : keyBuild.Status ==='Succeeded', 'panel panel-danger' : keyBuild.Status ==='Failed','panel panel-info' : keyBuild.Status === 'InProgress' || keyBuild.Status === 'Unknown','panel panel-warning' : keyBuild.Status ==='Stopped' || keyBuild.Status === 'PartiallySucceeded' || keyBuild.Status ==='None'}">
+                                    <div class="panel-heading">
+                                        Build: {{keyBuild.DefinitionName}}
+                                    </div>
+                                    <div class="panel-body fixed-panel">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <ul>
+                                                    <li>
+                                                        <small>Status: {{keyBuild.Status}}</small>
+                                                    </li>
+                                                    <li>
+                                                        <small>Test Status: {{keyBuild.TestStatus}}</small>
+                                                    </li>
+                                                    <li>
+                                                        <small>Requested by: {{keyBuild.RequestedFor}}</small>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <ul>
+
+                                                    <li>
+                                                        <small>Start Time: {{keyBuild.StartTime | date:'dd/MM/yyyy HH:mm:ss'}}</small>
+                                                    </li>
+                                                    <li>
+                                                        <small>Finish Time: {{keyBuild.FinishTime | date:'dd/MM/yyyy HH:mm:ss'}}</small>
+                                                    </li>
+                                                    <li>
+                                                        <small>Warnings: {{keyBuild.Warnings}}</small>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                                <div ng-repeat="testRun in keyBuild.TestRunList">
+
+                                                    <div class="col-md-3">
+                                                        <div>
+                                                            <div>
+                                                                <angular-chart options="testRun.DonutChartOption"></angular-chart>
+                                                            </div>
+                                                            <div>
+                                                                <small>
+                                                                    {{testRun.Name}}
+                                                                </small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-caption">
+                    <h3>In progress Key Build Info</h3>
+                </div>
+            </div>
+            <div class="item">
+                <div class="container">
+                    <div class="row">
+                        <div ng-repeat="option in OptionsList">
+                            <div class="col-md-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        {{option.name}}
+                                    </div>
+                                    <div class="panel-body">
+                                        <angular-chart options="option" width="450" height="320"></angular-chart>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-caption">
+                    <h3>Burndowns</h3>
+                </div>
+            </div>
+            <div class="item">
+                <div class="container">
+                    <div>
+                        <table class="table table-bordered table-hover table-condensed ">
+                            <thead>
+                                <tr>
+                                    <td><small>Story</small></td>
+                                    <td><small>Task</small></td>
+                                    <td><small>Date First In Progress</small></td>
+                                    <td><small>Assigned To</small></td>
+                                   
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="task in Model.InProgressTasks" ng-class="{success : !task.IsLingering , danger :  task.IsLingering}">
+                                    <td><small>{{task.StoryNameTruncated}}</small></td>
+                                    <td><small>{{task.NameTruncated}}</small></td>
+                                    <td><small>{{task.FirstInProgressDate | date:'dd/MM/yyyy HH:mm:ss'}}</small></td>
+                                    <td><small>{{task.Assigned}}</small></td>
+                                    
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="carousel-caption">
+                    <h3>In Progress tasks</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div> <!-- Carousel -->
+</div>
+
+</body>
+</html>

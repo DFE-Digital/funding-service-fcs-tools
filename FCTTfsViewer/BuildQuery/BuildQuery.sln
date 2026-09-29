@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildQuery", "BuildQuery\BuildQuery.csproj", "{9A4D3E44-1FA2-41E1-A943-97F3B9410319}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildQuery.TfsData", "BuildQuery.TfsData\BuildQuery.TfsData.csproj", "{A5C1827F-1CB3-4F1B-BA2E-029D18889F24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildQuery.WebApp", "BuildQuery.WebApp\BuildQuery.WebApp.csproj", "{BA201EE6-0A8C-4DB3-8F21-075E6B1CE575}"
+EndProject
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "BuildQuery.Deploy", "BuildQuery.Deploy\BuildQuery.Deploy.ccproj", "{439DAC74-E4DC-4113-8839-C78B612F40A4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A4D3E44-1FA2-41E1-A943-97F3B9410319}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A4D3E44-1FA2-41E1-A943-97F3B9410319}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A4D3E44-1FA2-41E1-A943-97F3B9410319}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A4D3E44-1FA2-41E1-A943-97F3B9410319}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5C1827F-1CB3-4F1B-BA2E-029D18889F24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5C1827F-1CB3-4F1B-BA2E-029D18889F24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5C1827F-1CB3-4F1B-BA2E-029D18889F24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5C1827F-1CB3-4F1B-BA2E-029D18889F24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA201EE6-0A8C-4DB3-8F21-075E6B1CE575}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA201EE6-0A8C-4DB3-8F21-075E6B1CE575}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA201EE6-0A8C-4DB3-8F21-075E6B1CE575}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA201EE6-0A8C-4DB3-8F21-075E6B1CE575}.Release|Any CPU.Build.0 = Release|Any CPU
+		{439DAC74-E4DC-4113-8839-C78B612F40A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{439DAC74-E4DC-4113-8839-C78B612F40A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{439DAC74-E4DC-4113-8839-C78B612F40A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{439DAC74-E4DC-4113-8839-C78B612F40A4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.sfa.bis.gov.uk/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = BuildQuery\\BuildQuery.csproj
+		SccProjectName1 = BuildQuery
+		SccLocalPath1 = BuildQuery
+		SccProjectUniqueName2 = BuildQuery.TfsData\\BuildQuery.TfsData.csproj
+		SccProjectName2 = BuildQuery.TfsData
+		SccLocalPath2 = BuildQuery.TfsData
+		SccProjectUniqueName3 = BuildQuery.WebApp\\BuildQuery.WebApp.csproj
+		SccProjectName3 = BuildQuery.WebApp
+		SccLocalPath3 = BuildQuery.WebApp
+		SccProjectUniqueName4 = BuildQuery.Deploy\\BuildQuery.Deploy.ccproj
+		SccProjectName4 = BuildQuery.Deploy
+		SccLocalPath4 = BuildQuery.Deploy
+	EndGlobalSection
+EndGlobal
