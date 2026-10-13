@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29025.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRMOnlineHelper", "CRMOnlineHelper\CRMOnlineHelper.csproj", "{DB461D57-4113-43B2-A2B0-D59573D44051}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCRMOnlineHelper", "TestCRMOnlineHelper\TestCRMOnlineHelper.csproj", "{7C6AA466-EB66-4E5E-8854-7E956DE8F66A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB461D57-4113-43B2-A2B0-D59573D44051}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB461D57-4113-43B2-A2B0-D59573D44051}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB461D57-4113-43B2-A2B0-D59573D44051}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB461D57-4113-43B2-A2B0-D59573D44051}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C6AA466-EB66-4E5E-8854-7E956DE8F66A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C6AA466-EB66-4E5E-8854-7E956DE8F66A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C6AA466-EB66-4E5E-8854-7E956DE8F66A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C6AA466-EB66-4E5E-8854-7E956DE8F66A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {02B39D4D-6CAB-408A-8D73-D0C81FA1BB47}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://sfa-fcs.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CRMOnlineHelper\\CRMOnlineHelper.csproj
+		SccProjectName1 = CRMOnlineHelper
+		SccLocalPath1 = CRMOnlineHelper
+		SccProjectUniqueName2 = TestCRMOnlineHelper\\TestCRMOnlineHelper.csproj
+		SccProjectName2 = TestCRMOnlineHelper
+		SccLocalPath2 = TestCRMOnlineHelper
+	EndGlobalSection
+EndGlobal

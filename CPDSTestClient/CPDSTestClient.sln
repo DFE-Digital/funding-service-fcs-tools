@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPDSTestClient", "CPDSTestClient\CPDSTestClient.csproj", "{40BE9D9D-C78C-4678-9C9F-034148D5F246}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		PreProd|Any CPU = PreProd|Any CPU
+		Production|Any CPU = Production|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40BE9D9D-C78C-4678-9C9F-034148D5F246}.PreProd|Any CPU.ActiveCfg = PreProd|Any CPU
+		{40BE9D9D-C78C-4678-9C9F-034148D5F246}.PreProd|Any CPU.Build.0 = PreProd|Any CPU
+		{40BE9D9D-C78C-4678-9C9F-034148D5F246}.Production|Any CPU.ActiveCfg = Production|Any CPU
+		{40BE9D9D-C78C-4678-9C9F-034148D5F246}.Production|Any CPU.Build.0 = Production|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5C5F05E6-8D5E-48A5-9222-2C54A0733980}
+	EndGlobalSection
+EndGlobal

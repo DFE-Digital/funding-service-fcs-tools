@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SystemData>
+  <BusinessUnits>
+    <BusinessUnit name="Default">
+      <ParentBusinessUnit></ParentBusinessUnit>
+    </BusinessUnit>
+    <BusinessUnit name="Default">
+      <ParentBusinessUnit></ParentBusinessUnit>
+    </BusinessUnit>
+  </BusinessUnits>
+  <SystemUsers>
+    <SystemUser domainname="FCTDEV\User1">
+      <FirstName>David</FirstName>
+      <LastName>Smith</LastName>
+      <BusinessUnit>Manchester</BusinessUnit>
+      <Email>dave.smith@sfa.org.uk</Email>
+      <Telephone>01229 203030</Telephone>
+      <Manager></Manager>
+      <Title>CDS Advisor</Title>
+      <AccessMode>0</AccessMode>
+      <LicenseType>0</LicenseType>
+      <Roles>
+        <Role name="System Administrator"/>
+      </Roles>
+      <FLSProfiles>
+        <FLSProfiles name="System Administrator"/>
+      </FLSProfiles>
+    </SystemUser>
+  </SystemUsers>
+  <Teams>
+    <Team name="">
+      <Manager>FCTDEV\User1</Manager>
+      <Description>Description</Description>
+      <Members>
+        <Member domainname="FCTDEV\User1"/>
+      </Members>
+      <Roles>
+        <Role name=""/>
+        <Role name=""/>
+      </Roles>
+      <FLSProfiles>
+        <FLSProfiles name=""/>
+      </FLSProfiles>
+    </Team>
+  </Teams>
+  <Queues>
+    <Queue name="Queue1">
+      <Email>queue1@fctdev.local</Email>
+      <Owner>FCTDEV\User1</Owner>
+    </Queue>
+  </Queues>
+</SystemData>

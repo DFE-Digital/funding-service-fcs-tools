@@ -1,0 +1,31 @@
+﻿html { 
+     background-image: url('/images/colored-cogs.jpg');
+     background-repeat:no-repeat; 
+     background-size:cover;
+ }
+body {
+background-color:transparent;
+}
+h1 {
+    background-color:whitesmoke;
+    color:darkgreen;
+    text-align:center;
+}
+.c3-chart-arc text {
+    fill: black;
+}
+.panel {
+    background-color:whitesmoke;
+}
+.container {
+    background-color:whitesmoke;
+}
+.carousel-caption{
+    color:black;
+}
+.carousel-indicators{
+    color:black;
+}
+
+
+ 

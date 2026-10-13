@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="405af4f8-9367-4921-a551-eebf0d2e16ca" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:100/Deds/Search/DedsSearchService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DedsSearchService.xsd" MetadataType="Schema" ID="c93ba6ba-effc-49ec-9b59-8d9b545b9881" SourceId="1" SourceUrl="http://localhost:100/Deds/Search/DedsSearchService.svc?xsd=xsd1" />
+    <MetadataFile FileName="DedsSearchService.wsdl" MetadataType="Wsdl" ID="cc547c83-60e7-4727-a418-f764a6fee51a" SourceId="1" SourceUrl="http://localhost:100/Deds/Search/DedsSearchService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="DedsSearchService1.xsd" MetadataType="Schema" ID="88239ce6-cc18-4dd2-ae52-b1392acadb25" SourceId="1" SourceUrl="http://localhost:100/Deds/Search/DedsSearchService.svc?xsd=xsd0" />
+    <MetadataFile FileName="DedsSearchService.disco" MetadataType="Disco" ID="8b5edd5e-5c9e-4ec3-9a8b-c5997a95c877" SourceId="1" SourceUrl="http://localhost:100/Deds/Search/DedsSearchService.svc?disco" />
+    <MetadataFile FileName="DedsSearchService2.xsd" MetadataType="Schema" ID="6bff0beb-0d88-4802-a403-821f0246fab1" SourceId="1" SourceUrl="http://localhost:100/Deds/Search/DedsSearchService.svc?xsd=xsd3" />
+    <MetadataFile FileName="DedsSearchService3.xsd" MetadataType="Schema" ID="7fe34d60-fe69-4f13-8a62-d4959151db57" SourceId="1" SourceUrl="http://localhost:100/Deds/Search/DedsSearchService.svc?xsd=xsd2" />
+    <MetadataFile FileName="DedsSearchService1.wsdl" MetadataType="Wsdl" ID="19b8cd17-d1ce-42b6-a017-5139c75d01ee" SourceId="1" SourceUrl="http://localhost:100/Deds/Search/DedsSearchService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

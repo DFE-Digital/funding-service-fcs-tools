@@ -1,0 +1,528 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BA201EE6-0A8C-4DB3-8F21-075E6B1CE575}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BuildQuery.WebApp</RootNamespace>
+    <AssemblyName>BuildQuery.WebApp</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <IncludeIisSettings>false</IncludeIisSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.2.0\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.3.2.1\lib\net45\Castle.Windsor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.2\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.2\lib\net40\Microsoft.Data.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.6.2\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Build.Client, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.14.83.2\lib\net45\Microsoft.TeamFoundation.Build.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.2.0.3\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Diagnostics, Version=2.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.ServiceRuntime, Version=2.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=4.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.Storage.4.3.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.6.2\lib\net40\System.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebApiContrib.IoC.CastleWindsor, Version=0.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebApiContrib.IoC.CastleWindsor.0.10.0.0\lib\net40\WebApiContrib.IoC.CastleWindsor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\bw-cogs.jpg" />
+    <Content Include="images\colored-cogs2.jpg" />
+    <Content Include="Microsoft.WITDataStore32.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Microsoft.WITDataStore64.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="lib\angular\.bower.json" />
+    <Content Include="lib\angular\angular.min.js.gzip">
+      <DependentUpon>angular.min.js</DependentUpon>
+    </Content>
+    <Content Include="lib\angular\angular.min.js.map">
+      <DependentUpon>angular.min.js</DependentUpon>
+    </Content>
+    <Content Include="lib\angular\bower.json" />
+    <Content Include="lib\angular\package.json" />
+    <Content Include="lib\angular\README.md" />
+    <Content Include="lib\angular-chart\.bower.json" />
+    <Content Include="lib\angular-chart\bower.json" />
+    <Content Include="lib\angular-chart\LICENSE" />
+    <Content Include="lib\angular-chart\README.md" />
+    <Content Include="lib\angular-chart\wallaby.json" />
+    <Content Include="lib\angular-http\.bower.json" />
+    <Content Include="lib\angular-http\bower.json" />
+    <Content Include="lib\angular-httpi\.bower.json" />
+    <Content Include="lib\angular-httpi\LICENSE.md" />
+    <Content Include="lib\angular-httpi\README.md" />
+    <Content Include="lib\angular-route\.bower.json" />
+    <Content Include="lib\angular-route\angular-route.min.js.map">
+      <DependentUpon>angular-route.min.js</DependentUpon>
+    </Content>
+    <Content Include="lib\angular-route\bower.json" />
+    <Content Include="lib\angular-route\package.json" />
+    <Content Include="lib\angular-route\README.md" />
+    <Content Include="lib\bootstrap\dist\css\bootstrap.css.map">
+      <DependentUpon>bootstrap.css</DependentUpon>
+    </Content>
+    <Content Include="lib\bootstrap\dist\css\bootstrap-theme.css.map">
+      <DependentUpon>bootstrap-theme.css</DependentUpon>
+    </Content>
+    <Content Include="lib\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="lib\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="lib\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="lib\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="lib\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="lib\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="lib\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="lib\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="lib\bootstrap\grunt\.jshintrc" />
+    <Content Include="lib\bootstrap\grunt\configBridge.json" />
+    <Content Include="lib\bootstrap\grunt\sauce_browsers.yml" />
+    <Content Include="lib\bootstrap\js\.jscsrc" />
+    <Content Include="lib\bootstrap\js\.jshintrc" />
+    <Content Include="lib\bootstrap\less\mixins\alerts.less" />
+    <Content Include="lib\bootstrap\less\mixins\background-variant.less" />
+    <Content Include="lib\bootstrap\less\mixins\border-radius.less" />
+    <Content Include="lib\bootstrap\less\mixins\buttons.less" />
+    <Content Include="lib\bootstrap\less\mixins\center-block.less" />
+    <Content Include="lib\bootstrap\less\mixins\clearfix.less" />
+    <Content Include="lib\bootstrap\less\mixins\forms.less" />
+    <Content Include="lib\bootstrap\less\mixins\gradients.less" />
+    <Content Include="lib\bootstrap\less\mixins\grid.less" />
+    <Content Include="lib\bootstrap\less\mixins\grid-framework.less" />
+    <Content Include="lib\bootstrap\less\mixins\hide-text.less" />
+    <Content Include="lib\bootstrap\less\mixins\image.less" />
+    <Content Include="lib\bootstrap\less\mixins\labels.less" />
+    <Content Include="lib\bootstrap\less\mixins\list-group.less" />
+    <Content Include="lib\bootstrap\less\mixins\nav-divider.less" />
+    <Content Include="lib\bootstrap\less\mixins\nav-vertical-align.less" />
+    <Content Include="lib\bootstrap\less\mixins\opacity.less" />
+    <Content Include="lib\bootstrap\less\mixins\pagination.less" />
+    <Content Include="lib\bootstrap\less\mixins\panels.less" />
+    <Content Include="lib\bootstrap\less\mixins\progress-bar.less" />
+    <Content Include="lib\bootstrap\less\mixins\reset-filter.less" />
+    <Content Include="lib\bootstrap\less\mixins\reset-text.less" />
+    <Content Include="lib\bootstrap\less\mixins\resize.less" />
+    <Content Include="lib\bootstrap\less\mixins\responsive-visibility.less" />
+    <Content Include="lib\bootstrap\less\mixins\size.less" />
+    <Content Include="lib\bootstrap\less\mixins\tab-focus.less" />
+    <Content Include="lib\bootstrap\less\mixins\table-row.less" />
+    <Content Include="lib\bootstrap\less\mixins\text-emphasis.less" />
+    <Content Include="lib\bootstrap\less\mixins\text-overflow.less" />
+    <Content Include="lib\bootstrap\less\mixins\vendor-prefixes.less" />
+    <Content Include="lib\bootstrap\less\.csscomb.json" />
+    <Content Include="lib\bootstrap\less\.csslintrc" />
+    <Content Include="lib\bootstrap\less\alerts.less" />
+    <Content Include="lib\bootstrap\less\badges.less" />
+    <Content Include="lib\bootstrap\less\bootstrap.less" />
+    <Content Include="lib\bootstrap\less\breadcrumbs.less" />
+    <Content Include="lib\bootstrap\less\button-groups.less" />
+    <Content Include="lib\bootstrap\less\buttons.less" />
+    <Content Include="lib\bootstrap\less\carousel.less" />
+    <Content Include="lib\bootstrap\less\close.less" />
+    <Content Include="lib\bootstrap\less\code.less" />
+    <Content Include="lib\bootstrap\less\component-animations.less" />
+    <Content Include="lib\bootstrap\less\dropdowns.less" />
+    <Content Include="lib\bootstrap\less\forms.less" />
+    <Content Include="lib\bootstrap\less\glyphicons.less" />
+    <Content Include="lib\bootstrap\less\grid.less" />
+    <Content Include="lib\bootstrap\less\input-groups.less" />
+    <Content Include="lib\bootstrap\less\jumbotron.less" />
+    <Content Include="lib\bootstrap\less\labels.less" />
+    <Content Include="lib\bootstrap\less\list-group.less" />
+    <Content Include="lib\bootstrap\less\media.less" />
+    <Content Include="lib\bootstrap\less\mixins.less" />
+    <Content Include="lib\bootstrap\less\modals.less" />
+    <Content Include="lib\bootstrap\less\navbar.less" />
+    <Content Include="lib\bootstrap\less\navs.less" />
+    <Content Include="lib\bootstrap\less\normalize.less" />
+    <Content Include="lib\bootstrap\less\pager.less" />
+    <Content Include="lib\bootstrap\less\pagination.less" />
+    <Content Include="lib\bootstrap\less\panels.less" />
+    <Content Include="lib\bootstrap\less\popovers.less" />
+    <Content Include="lib\bootstrap\less\print.less" />
+    <Content Include="lib\bootstrap\less\progress-bars.less" />
+    <Content Include="lib\bootstrap\less\responsive-embed.less" />
+    <Content Include="lib\bootstrap\less\responsive-utilities.less" />
+    <Content Include="lib\bootstrap\less\scaffolding.less" />
+    <Content Include="lib\bootstrap\less\tables.less" />
+    <Content Include="lib\bootstrap\less\theme.less" />
+    <Content Include="lib\bootstrap\less\thumbnails.less" />
+    <Content Include="lib\bootstrap\less\tooltip.less" />
+    <Content Include="lib\bootstrap\less\type.less" />
+    <Content Include="lib\bootstrap\less\utilities.less" />
+    <Content Include="lib\bootstrap\less\variables.less" />
+    <Content Include="lib\bootstrap\less\wells.less" />
+    <Content Include="lib\bootstrap\.bower.json" />
+    <Content Include="lib\bootstrap\bower.json" />
+    <Content Include="lib\bootstrap\LICENSE" />
+    <Content Include="lib\bootstrap\package.json" />
+    <Content Include="lib\bootstrap\README.md" />
+    <Content Include="lib\c3\extensions\exporter\config.json" />
+    <Content Include="lib\c3\.bower.json" />
+    <Content Include="lib\c3\bower.json" />
+    <Content Include="lib\c3\LICENSE" />
+    <Content Include="lib\c3\README.md" />
+    <Content Include="lib\d3\.bower.json" />
+    <Content Include="lib\d3\bower.json" />
+    <Content Include="lib\d3\CONTRIBUTING.md" />
+    <Content Include="lib\d3\LICENSE" />
+    <Content Include="lib\d3\README.md" />
+    <Content Include="lib\jquery\dist\jquery.min.map">
+      <DependentUpon>jquery.min.js</DependentUpon>
+    </Content>
+    <Content Include="lib\jquery\src\sizzle\dist\sizzle.min.map">
+      <DependentUpon>sizzle.min.js</DependentUpon>
+    </Content>
+    <Content Include="lib\jquery\.bower.json" />
+    <Content Include="lib\jquery\bower.json" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app.css" />
+    <Content Include="app.js" />
+    <Content Include="Global.asax" />
+    <Content Include="images\colored-cogs.jpg" />
+    <Content Include="Index.html" />
+    <Content Include="lib\angular-chart\angular-chart.js" />
+    <Content Include="lib\angular-chart\angular-chart.min.js">
+      <DependentUpon>angular-chart.js</DependentUpon>
+    </Content>
+    <Content Include="lib\angular-chart\gulpfile.js" />
+    <Content Include="lib\angular-chart\karma.conf.js" />
+    <Content Include="lib\angular-chart\src\js\baseConfiguration.js" />
+    <Content Include="lib\angular-chart\src\js\controller.js" />
+    <Content Include="lib\angular-chart\src\js\converter.js" />
+    <Content Include="lib\angular-chart\src\js\directive.js" />
+    <Content Include="lib\angular-chart\src\js\service.js" />
+    <Content Include="lib\angular-chart\src\js\state.js" />
+    <Content Include="lib\angular-chart\src\js\watcher.js" />
+    <Content Include="lib\angular-httpi\build\httpi.min.js" />
+    <Content Include="lib\angular-httpi\example\index.htm" />
+    <Content Include="lib\angular-httpi\example\vendor\angular-1.2.16.min.js" />
+    <Content Include="lib\angular-httpi\lib\httpi.js" />
+    <Content Include="lib\angular-http\angular-http.js" />
+    <Content Include="lib\angular-http\angular-http.min.js">
+      <DependentUpon>angular-http.js</DependentUpon>
+    </Content>
+    <Content Include="lib\angular-route\angular-route.js" />
+    <Content Include="lib\angular-route\angular-route.min.js">
+      <DependentUpon>angular-route.js</DependentUpon>
+    </Content>
+    <Content Include="lib\angular-route\index.js" />
+    <Content Include="lib\angular\angular-csp.css" />
+    <Content Include="lib\angular\angular.js" />
+    <Content Include="lib\angular\angular.min.js">
+      <DependentUpon>angular.js</DependentUpon>
+    </Content>
+    <Content Include="lib\angular\index.js" />
+    <Content Include="lib\bootstrap\dist\css\bootstrap-theme.css" />
+    <Content Include="lib\bootstrap\dist\css\bootstrap-theme.min.css">
+      <DependentUpon>bootstrap-theme.css</DependentUpon>
+    </Content>
+    <Content Include="lib\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="lib\bootstrap\dist\css\bootstrap.min.css">
+      <DependentUpon>bootstrap.css</DependentUpon>
+    </Content>
+    <Content Include="lib\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="lib\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="lib\bootstrap\dist\js\bootstrap.min.js">
+      <DependentUpon>bootstrap.js</DependentUpon>
+    </Content>
+    <Content Include="lib\bootstrap\dist\js\npm.js" />
+    <Content Include="lib\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="lib\bootstrap\Gruntfile.js" />
+    <Content Include="lib\bootstrap\grunt\bs-commonjs-generator.js" />
+    <Content Include="lib\bootstrap\grunt\bs-glyphicons-data-generator.js" />
+    <Content Include="lib\bootstrap\grunt\bs-lessdoc-parser.js" />
+    <Content Include="lib\bootstrap\grunt\bs-raw-files-generator.js" />
+    <Content Include="lib\bootstrap\js\affix.js" />
+    <Content Include="lib\bootstrap\js\alert.js" />
+    <Content Include="lib\bootstrap\js\button.js" />
+    <Content Include="lib\bootstrap\js\carousel.js" />
+    <Content Include="lib\bootstrap\js\collapse.js" />
+    <Content Include="lib\bootstrap\js\dropdown.js" />
+    <Content Include="lib\bootstrap\js\modal.js" />
+    <Content Include="lib\bootstrap\js\popover.js" />
+    <Content Include="lib\bootstrap\js\scrollspy.js" />
+    <Content Include="lib\bootstrap\js\tab.js" />
+    <Content Include="lib\bootstrap\js\tooltip.js" />
+    <Content Include="lib\bootstrap\js\transition.js" />
+    <Content Include="lib\bootstrap\package.js" />
+    <Content Include="lib\c3\c3.css" />
+    <Content Include="lib\c3\c3.js" />
+    <Content Include="lib\c3\c3.min.css">
+      <DependentUpon>c3.css</DependentUpon>
+    </Content>
+    <Content Include="lib\c3\c3.min.js">
+      <DependentUpon>c3.js</DependentUpon>
+    </Content>
+    <Content Include="lib\c3\extensions\exporter\phantom-exporter.js" />
+    <Content Include="lib\c3\extensions\exporter\test.png" />
+    <Content Include="lib\c3\extensions\js\c3ext.js" />
+    <Content Include="lib\d3\d3.js" />
+    <Content Include="lib\d3\d3.min.js">
+      <DependentUpon>d3.js</DependentUpon>
+    </Content>
+    <Content Include="lib\jquery\dist\jquery.js" />
+    <Content Include="lib\jquery\dist\jquery.min.js">
+      <DependentUpon>jquery.js</DependentUpon>
+    </Content>
+    <Content Include="lib\jquery\MIT-LICENSE.txt" />
+    <Content Include="lib\jquery\src\ajax.js" />
+    <Content Include="lib\jquery\src\ajax\jsonp.js" />
+    <Content Include="lib\jquery\src\ajax\load.js" />
+    <Content Include="lib\jquery\src\ajax\parseJSON.js" />
+    <Content Include="lib\jquery\src\ajax\parseXML.js" />
+    <Content Include="lib\jquery\src\ajax\script.js" />
+    <Content Include="lib\jquery\src\ajax\var\nonce.js" />
+    <Content Include="lib\jquery\src\ajax\var\rquery.js" />
+    <Content Include="lib\jquery\src\ajax\xhr.js" />
+    <Content Include="lib\jquery\src\attributes.js" />
+    <Content Include="lib\jquery\src\attributes\attr.js" />
+    <Content Include="lib\jquery\src\attributes\classes.js" />
+    <Content Include="lib\jquery\src\attributes\prop.js" />
+    <Content Include="lib\jquery\src\attributes\support.js" />
+    <Content Include="lib\jquery\src\attributes\val.js" />
+    <Content Include="lib\jquery\src\callbacks.js" />
+    <Content Include="lib\jquery\src\core.js" />
+    <Content Include="lib\jquery\src\core\access.js" />
+    <Content Include="lib\jquery\src\core\init.js" />
+    <Content Include="lib\jquery\src\core\parseHTML.js" />
+    <Content Include="lib\jquery\src\core\ready.js" />
+    <Content Include="lib\jquery\src\core\var\rsingleTag.js" />
+    <Content Include="lib\jquery\src\css.js" />
+    <Content Include="lib\jquery\src\css\addGetHookIf.js" />
+    <Content Include="lib\jquery\src\css\curCSS.js" />
+    <Content Include="lib\jquery\src\css\defaultDisplay.js" />
+    <Content Include="lib\jquery\src\css\hiddenVisibleSelectors.js" />
+    <Content Include="lib\jquery\src\css\support.js" />
+    <Content Include="lib\jquery\src\css\swap.js" />
+    <Content Include="lib\jquery\src\css\var\cssExpand.js" />
+    <Content Include="lib\jquery\src\css\var\getStyles.js" />
+    <Content Include="lib\jquery\src\css\var\isHidden.js" />
+    <Content Include="lib\jquery\src\css\var\rmargin.js" />
+    <Content Include="lib\jquery\src\css\var\rnumnonpx.js" />
+    <Content Include="lib\jquery\src\data.js" />
+    <Content Include="lib\jquery\src\data\accepts.js" />
+    <Content Include="lib\jquery\src\data\Data.js" />
+    <Content Include="lib\jquery\src\data\var\data_priv.js" />
+    <Content Include="lib\jquery\src\data\var\data_user.js" />
+    <Content Include="lib\jquery\src\deferred.js" />
+    <Content Include="lib\jquery\src\deprecated.js" />
+    <Content Include="lib\jquery\src\dimensions.js" />
+    <Content Include="lib\jquery\src\effects.js" />
+    <Content Include="lib\jquery\src\effects\animatedSelector.js" />
+    <Content Include="lib\jquery\src\effects\Tween.js" />
+    <Content Include="lib\jquery\src\event.js" />
+    <Content Include="lib\jquery\src\event\ajax.js" />
+    <Content Include="lib\jquery\src\event\alias.js" />
+    <Content Include="lib\jquery\src\event\support.js" />
+    <Content Include="lib\jquery\src\exports\amd.js" />
+    <Content Include="lib\jquery\src\exports\global.js" />
+    <Content Include="lib\jquery\src\intro.js" />
+    <Content Include="lib\jquery\src\jquery.js" />
+    <Content Include="lib\jquery\src\manipulation.js" />
+    <Content Include="lib\jquery\src\manipulation\support.js" />
+    <Content Include="lib\jquery\src\manipulation\var\rcheckableType.js" />
+    <Content Include="lib\jquery\src\manipulation\_evalUrl.js" />
+    <Content Include="lib\jquery\src\offset.js" />
+    <Content Include="lib\jquery\src\outro.js" />
+    <Content Include="lib\jquery\src\queue.js" />
+    <Content Include="lib\jquery\src\queue\delay.js" />
+    <Content Include="lib\jquery\src\selector-native.js" />
+    <Content Include="lib\jquery\src\selector-sizzle.js" />
+    <Content Include="lib\jquery\src\selector.js" />
+    <Content Include="lib\jquery\src\serialize.js" />
+    <Content Include="lib\jquery\src\sizzle\dist\sizzle.js" />
+    <Content Include="lib\jquery\src\sizzle\dist\sizzle.min.js">
+      <DependentUpon>sizzle.js</DependentUpon>
+    </Content>
+    <Content Include="lib\jquery\src\traversing.js" />
+    <Content Include="lib\jquery\src\traversing\findFilter.js" />
+    <Content Include="lib\jquery\src\traversing\var\rneedsContext.js" />
+    <Content Include="lib\jquery\src\var\arr.js" />
+    <Content Include="lib\jquery\src\var\class2type.js" />
+    <Content Include="lib\jquery\src\var\concat.js" />
+    <Content Include="lib\jquery\src\var\hasOwn.js" />
+    <Content Include="lib\jquery\src\var\indexOf.js" />
+    <Content Include="lib\jquery\src\var\pnum.js" />
+    <Content Include="lib\jquery\src\var\push.js" />
+    <Content Include="lib\jquery\src\var\rnotwhite.js" />
+    <Content Include="lib\jquery\src\var\slice.js" />
+    <Content Include="lib\jquery\src\var\strundefined.js" />
+    <Content Include="lib\jquery\src\var\support.js" />
+    <Content Include="lib\jquery\src\var\toString.js" />
+    <Content Include="lib\jquery\src\wrap.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="API\TfsApiController.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Ioc\WindsorInstaller.cs" />
+    <Compile Include="Models\BurnDownDataPoint.cs" />
+    <Compile Include="Models\FctBuildDetail.cs" />
+    <Compile Include="Models\FctBurndown.cs" />
+    <Compile Include="Models\FctTask.cs" />
+    <Compile Include="Models\FctFailedTest.cs" />
+    <Compile Include="Models\FctTestRun.cs" />
+    <Compile Include="Models\IMainModelManager.cs" />
+    <Compile Include="Models\MainModel.cs" />
+    <Compile Include="Models\MainModelManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BuildQuery.TfsData\BuildQuery.TfsData.csproj">
+      <Project>{a5c1827f-1cb3-4f1b-ba2e-029d18889f24}</Project>
+      <Name>BuildQuery.TfsData</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>22549</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:22118/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

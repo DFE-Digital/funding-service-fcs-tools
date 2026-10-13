@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceBusExplorer", "ServiceBusExplorer.csproj", "{32754F39-E353-4607-94FE-B9B9ACFD58EF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B59933A5-4AE0-4340-9102-578619A93341}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE.txt = LICENSE.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfControls", "..\WpfControls\WpfControls.csproj", "{96DFEFB5-A008-400E-95AF-C0301463DE00}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32754F39-E353-4607-94FE-B9B9ACFD58EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32754F39-E353-4607-94FE-B9B9ACFD58EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32754F39-E353-4607-94FE-B9B9ACFD58EF}.Debug|x86.ActiveCfg = Debug|x86
+		{32754F39-E353-4607-94FE-B9B9ACFD58EF}.Debug|x86.Build.0 = Debug|x86
+		{32754F39-E353-4607-94FE-B9B9ACFD58EF}.Release|Any CPU.ActiveCfg = Release|x86
+		{32754F39-E353-4607-94FE-B9B9ACFD58EF}.Release|x86.ActiveCfg = Release|x86
+		{32754F39-E353-4607-94FE-B9B9ACFD58EF}.Release|x86.Build.0 = Release|x86
+		{96DFEFB5-A008-400E-95AF-C0301463DE00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96DFEFB5-A008-400E-95AF-C0301463DE00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96DFEFB5-A008-400E-95AF-C0301463DE00}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{96DFEFB5-A008-400E-95AF-C0301463DE00}.Debug|x86.Build.0 = Debug|Any CPU
+		{96DFEFB5-A008-400E-95AF-C0301463DE00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96DFEFB5-A008-400E-95AF-C0301463DE00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96DFEFB5-A008-400E-95AF-C0301463DE00}.Release|x86.ActiveCfg = Release|Any CPU
+		{96DFEFB5-A008-400E-95AF-C0301463DE00}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {47B153D0-F703-4B8F-BCD8-302263278890}
+	EndGlobalSection
+EndGlobal
